@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State Management</title>
+</head>
+<body>
+    <div id="counter"></div>
+    <button id="increment">Increment</button>
+
+    <script>
+        // Simple state object to store the count
+        const state = {
+            count: 0
+        };
+
+        // Function to render state
+        function render() {
+            const counterElement = document.getElementById('counter');
+            counterElement.innerHTML = `<h1>Count: ${state.count}</h1>`;
+        }
+
+        // Event listener to modify the state
+        document.getElementById('increment').addEventListener('click', () => {
+            state.count += 1; // Modify state
+            render(); // Re-render the UI
+        });
+
+        render(); // Initial render
+    </script>
+</body>
+</html>
